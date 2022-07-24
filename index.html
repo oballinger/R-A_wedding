@@ -2,6 +2,7 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <center>
 <h1></h1>
 </center>
@@ -96,13 +97,26 @@
         
 
 
-        
 
         return network;
 
     }
 
     drawGraph();
+
+
+    $(".vis-network").click(function() {
+
+    var tooltip = $('.vis-network-tooltip')[0]
+
+    var id = tooltip.innerHTML.split(' ')[2].split('<')[0]
+
+    var cluster_path = 'Clusters/'+id+".jpg"
+
+    tooltip.innerHTML = tooltip.innerHTML+" <br> <img src = "+cluster_path+" width=500px>";
+
+});
+
 
 </script>
 </body>
